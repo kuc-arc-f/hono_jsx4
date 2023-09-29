@@ -82,7 +82,7 @@ console.log("#get_list");
 //console.log(result.results);
             if(result.results.length < 1) {
                 console.error("Error, results.length < 1");
-                return Response.json({ret: "OK", data: []});
+                return [];
             }
             return result.results;
         } catch (e) {
@@ -135,6 +135,29 @@ console.log(body);
         } catch (e) {
             console.error(e);
             return [];
+        } 
+    },
+    /**
+     * 
+     * @param
+     *
+     * @return
+     */    
+    delete: async function(body, DB)
+    {
+        try{    
+console.log(body);
+            if (body) {
+                const sql = `
+                DELETE FROM Task  WHERE id= ${body.id};
+                `;
+console.log(sql);
+                await DB.prepare(sql).run();
+            }
+            return {ret: "OK", data: body};
+        } catch (e) {
+            console.error(e);
+            return {ret: "NG", data: body};
         } 
     },
 

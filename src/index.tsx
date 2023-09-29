@@ -11,6 +11,7 @@ import {TestIndex} from './views/test_index/App';
 import {TestShow} from './views/test_show/App';
 //import {TaskIndex} from './views/tasks/index/App';
 import {Csr1} from './views/csr1/App';
+import {Csr2} from './views/csr2/App';
 //
 interface Env {
   DB: Database
@@ -59,6 +60,10 @@ app.get('/csr1', async (c) => {
   const items = await testRouter.get_list(c, c.env.DB);
   return c.html(<Csr1 items={items} />);
 });
+app.get('/csr2', async (c) => { 
+  const items = await testRouter.get_list(c, c.env.DB);
+  return c.html(<Csr2 items={items} />);
+});
 
 
 /**
@@ -68,6 +73,16 @@ app.post('/api/test/create', async (c) => {
   const body = await c.req.json();
   const resulte = await testRouter.create(body, c.env.DB);
   return c.json(resulte);
+});
+app.post('/api/test/delete', async (c) => { 
+  const body = await c.req.json();
+  const resulte = await testRouter.delete(body, c.env.DB);
+  return c.json(resulte);
+});
+app.post('/api/csr2/get_list', async (c) => { 
+  const body = await c.req.json();
+  const resulte = await testRouter.get_list(c, c.env.DB);
+  return c.json({ret: "OK", data: resulte});
 });
 
 export default app;
