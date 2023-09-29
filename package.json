@@ -1,0 +1,21 @@
+{
+  "name": "hono_jsx4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "wrangler dev src/index.tsx",
+    "deploy": "wrangler deploy --minify src/index.tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230922.0",
+    "wrangler": "^3.10.0"
+  },
+  "dependencies": {
+    "hono": "^3.7.2"
+  }
+}

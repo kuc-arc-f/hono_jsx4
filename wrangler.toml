@@ -1,0 +1,10 @@
+name = "hono_jsx4"
+main = "src/index.ts"
+compatibility_date = "2023-09-01"
+node_compat = true
+
+[site]
+bucket = "./public"
+
+[vars]
+#API_KEY = "123"
