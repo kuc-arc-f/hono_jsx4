@@ -17,7 +17,9 @@ console.log(props);
             let TaskItemId = ${props.item.id};
             </script>`
             } 
-            {html`<script type="text/babel" src="/js/tasks/show.js?${timeStamp}"></script>`}       
+            {html`<script type="text/babel" src="/js/tasks/show.js?${timeStamp}"></script>`}  
+            <button id="btn_delete">[ delete ]</button>
+            {html`<script type="text/babel" src="/js/tasks/delete.js?${timeStamp}"></script>`}
         </div>
     </Layout>
 )

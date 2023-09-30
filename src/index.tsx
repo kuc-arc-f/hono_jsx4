@@ -111,6 +111,11 @@ app.post('/api/tasks/create', async (c) => {
   const resulte = await taskRouter.create(body, c.env.DB);
   return c.json(resulte);
 });
+app.post('/api/tasks/delete', async (c) => { 
+  const body = await c.req.json();
+  const resulte = await taskRouter.delete(body, c.env.DB);
+  return c.json(resulte);
+});
 //
 app.post('/api/csr2/get_list', async (c) => { 
   const body = await c.req.json();
