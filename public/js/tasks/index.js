@@ -62,7 +62,7 @@ console.log(items);
         <h1 className="text-4xl font-bold">TaskIndex</h1>
         <hr />
         <div className="py-2">
-            <a href="/tasks/create">[ Create ]</a>
+            <a href="/tasks/create" className="btn">Create</a>
         </div>
         <hr />
         <p className="d-none">{updatetime}</p>

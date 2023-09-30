@@ -22,6 +22,7 @@ interface Env {
 export const app = new Hono()
 app.get('/static/*', serveStatic({ root: './' }))
 app.get('/js/*', serveStatic({ root: './' }))
+app.get('/styles/*', serveStatic({ root: './' }))
 //
 const Top: FC<{ messages: string[] }> = (props: { messages: string[] }) => {
   return (
