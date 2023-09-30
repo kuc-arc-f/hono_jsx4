@@ -24,10 +24,11 @@ app.get('/js/*', serveStatic({ root: './' }))
 const Top: FC<{ messages: string[] }> = (props: { messages: string[] }) => {
   return (
     <Layout>
-      <h1>Hello Hono!</h1>
+      <h1 class="text-4xl font-bold">Hello Hono!</h1>
+      <hr />
       <ul>
         {props.messages.map((message) => {
-          return <li>{message}!!</li>
+          return (<li class="my-2" >{message}!!</li>)
         })}
       </ul>
     </Layout>

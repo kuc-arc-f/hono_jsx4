@@ -5,7 +5,7 @@ export const TestIndex: FC<{ items: any[] }> = (props: { items: any[] }) => {
   return (
     <Layout>
       <div>
-        <h1>Hello Hono!</h1>
+        <h1 class="text-4xl font-bold">Hello Hono!</h1>
         <a href="/test/test_create">[ Create ]</a>
         <hr />
         <ul>

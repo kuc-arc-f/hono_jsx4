@@ -10,6 +10,10 @@ export const Layout: FC = (props) => {
       <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
       <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
       `}        
+      {/* CSS */}
+      {html`
+      <script src="https://cdn.tailwindcss.com"></script>
+      `}        
       </head>
       <div>
         <a href="/">[ home ]</a>
@@ -18,7 +22,9 @@ export const Layout: FC = (props) => {
         <a href="/csr2">[ Csr2 ]</a>
       </div>
       <hr />
-      <body>{props.children}</body>
+      <body>
+        <div class="container mx-auto my-2 px-8 bg-white">{props.children}</div>
+      </body>
     </html>
   )
 }

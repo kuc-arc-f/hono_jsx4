@@ -60,15 +60,16 @@ console.log("#csr2.start");
     //
     return (
     <div className="App">
-        <h1>CSR-TEST</h1>
+        <h1 className="text-4xl font-bold">CSR-TEST</h1>
+        <hr className="my-2" />
         <a href="/test/test_create">[ Create ]</a>
-        <hr />
+        <hr className="my-2" />
         <p className="d-none">updatetime:{updatetime}</p>
         <ul>
           {items.map((item) => {
             return (
             <li key={item.id}>
-              <a href={`/test/${item.id}`}><h3>{item.title}</h3></a>
+              <a href={`/test/${item.id}`}><h3 className="text-3xl font-bold">{item.title}</h3></a>
               <p>id={item.id}</p>
               <hr />
             </li>

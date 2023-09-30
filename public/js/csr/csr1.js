@@ -8,12 +8,6 @@ function App() {
             console.log("#start");
             message = "hoge"; 
             updateTimestap();
-            /*
-            items = [
-                {id: 1, title:"t1" },
-                {id: 2, title:"t2" },
-            ];
-            */
         })()
     }, []);
     //

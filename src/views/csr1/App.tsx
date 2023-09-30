@@ -8,7 +8,7 @@ export const Csr1: FC<{ items: any[] }> = (props: { items: any[] }) => {
   return (
     <Layout>
       <div>
-        <h1>Csr1 </h1>
+        <h1 class="text-4xl font-bold">Csr1 </h1>
         <hr />
         <div id="root"></div>
         {html`<script type="text/babel" src="/js/csr/csr1.js?${timeStamp}"></script>`}       
