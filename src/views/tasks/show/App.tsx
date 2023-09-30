@@ -9,8 +9,8 @@ console.log(props);
     return (
     <Layout title="TaskShow">
         <div>
-            <a href="/tasks">[ back ]</a>
-            <hr />
+            <a href="/tasks" class="btn-outline-purple ms-2 my-2">back</a>
+            <hr class="my-4" />
             <div id="root"></div>
             {html`
             <script type="text/babel">
@@ -18,7 +18,7 @@ console.log(props);
             </script>`
             } 
             {html`<script type="text/babel" src="/js/tasks/show.js?${timeStamp}"></script>`}  
-            <button id="btn_delete">[ delete ]</button>
+            <button id="btn_delete" class="btn-red ms-2 my-2">Delete</button>
             {html`<script type="text/babel" src="/js/tasks/delete.js?${timeStamp}"></script>`}
         </div>
     </Layout>

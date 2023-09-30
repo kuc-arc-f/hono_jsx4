@@ -60,11 +60,11 @@ console.log(items);
     return (
     <div className="App">
         <h1 className="text-4xl font-bold">TaskIndex</h1>
-        <hr />
-        <div className="py-2">
-            <a href="/tasks/create" className="btn">Create</a>
+        <hr className="my-2" />
+        <div className="py-1">
+            <a href="/tasks/create" className="btn-purple ms-2">Create</a>
         </div>
-        <hr />
+        <hr className="my-2" />
         <p className="d-none">{updatetime}</p>
         <ul>
           {items.map((item) => {

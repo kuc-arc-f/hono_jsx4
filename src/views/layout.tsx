@@ -20,12 +20,12 @@ export const Layout: FC = (props) => {
         <link href="/styles/globals.css" rel="stylesheet">
         `}        
       </head>
-      <div>
+      <div class="text-center py-2">
         <a href="/">[ home ]</a>
-        <a href="/test/test_index">[test]</a>
-        <a href="/csr1">[ Csr1 ]</a>
+        <a href="/test/test_index"><span class="ps-2">[test]</span></a>
+        <a href="/csr1"><span class="ps-2">[ Csr1 ]</span></a>
         {/* <a href="/csr2">[ Csr2 ]</a> */}
-        <a href="/tasks">[ Tasks ]</a>
+        <a href="/tasks"><span class="ps-2">[ Tasks ]</span></a>
       </div>
       <hr />
       <body>
