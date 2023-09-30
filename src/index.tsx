@@ -1,4 +1,5 @@
 import { Hono } from 'hono'
+import { basicAuth } from 'hono/basic-auth'
 import type { FC } from 'hono/jsx'
 import { serveStatic } from 'hono/cloudflare-workers'
 //
@@ -20,6 +21,15 @@ interface Env {
 }
 //
 export const app = new Hono()
+//basicAuth
+app.use(
+  "/*",
+  basicAuth({
+    username: "test",
+    password: "1111",
+  })
+);
+//serveStatic
 app.get('/static/*', serveStatic({ root: './' }))
 app.get('/js/*', serveStatic({ root: './' }))
 app.get('/styles/*', serveStatic({ root: './' }))
