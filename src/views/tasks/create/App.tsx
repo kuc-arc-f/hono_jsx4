@@ -1,7 +1,7 @@
 import type { FC } from 'hono/jsx'
 import { html } from 'hono/html'
 //
-export const TestCreate: FC = (props) => {
+export const TaskCreate: FC = (props) => {
     const timeStamp = Date.now();
     return (
     <div>
@@ -11,7 +11,7 @@ export const TestCreate: FC = (props) => {
         <input type="text" id="title" />
         <hr />
         <button id="save">Save</button>
-        {html`<script src="/js/test/create.js?${timeStamp}"></script>`}        
+        {html`<script src="/js/tasks/create.js?${timeStamp}"></script>`}        
     </div>
     )
 }

@@ -1,22 +1,24 @@
-let items = [];
+let taskItem = [];
 let message = "";
+console.log("id=", TaskItemId);
 //
-const PageIndex = {
+const PageShow = {
     /**
      *
      * @param
      *
      * @return
      */ 
-    get_list : async function()
+    get : async function()
     {
         try{
             let ret = [];
             const item = {
                 api_key: "",
+                id: Number(TaskItemId),
             }
             const body = JSON.stringify(item);		
-            const res = await fetch("/api/tasks/get_list", {
+            const res = await fetch("/api/tasks/get", {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},      
                 body: body
@@ -34,9 +36,9 @@ const PageIndex = {
             ret = json.data;
             return ret;
         } catch (e) {
-            console.error("Error, get_list");
+            console.error("Error, get");
             console.error(e);
-            throw new Error('Error , get_list');
+            throw new Error('Error , get');
         }
     },  
 }
@@ -46,8 +48,8 @@ function App() {
     React.useEffect(() => {
         (async () => {
             console.log("#start");
-            items = await PageIndex.get_list();
-console.log(items);
+            taskItem = await PageShow.get();
+console.log(taskItem);
             updateTimestap();
         })()
     }, []);
@@ -59,24 +61,13 @@ console.log(items);
     //
     return (
     <div className="App">
-        <h1 className="text-4xl font-bold">TaskIndex</h1>
-        <hr />
-        <div className="py-2">
-            <a href="/tasks/create">[ Create ]</a>
-        </div>
-        <hr />
         <p className="d-none">{updatetime}</p>
-        <ul>
-          {items.map((item) => {
-            return (
-            <li key={item.id}>
-              <a href={`/tasks/${item.id}`}><h3 className="text-3xl font-bold">{item.title}</h3></a>
-              <p>id={item.id}</p>
-              <hr />
-            </li>
-            );
-          })}
-        </ul>   
+        <h1 className="text-4xl font-bold">{taskItem.title}</h1>
+        <p>id: {taskItem.id}, {taskItem.createdAt}</p>
+        <hr />
+        {/*
+        <p>{taskItem.content}</p>
+        */}
         <hr />        
         {/* CSS */}
         <style>

@@ -3,7 +3,7 @@ import {Layout} from '../layout';
 //
 export const TestIndex: FC<{ items: any[] }> = (props: { items: any[] }) => {
   return (
-    <Layout>
+    <Layout title="Test_index">
       <div>
         <h1 class="text-4xl font-bold">Hello Hono!</h1>
         <a href="/test/test_create">[ Create ]</a>
